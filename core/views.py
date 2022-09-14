@@ -97,18 +97,27 @@ def searchNews(keyword):
 def index(request):
   user_model = User.objects.get(username=request.user.username)
   user_profile = Profile.objects.get(user=user_model)
-  interest = user_profile.interests
-  country = user_profile.country
-  data = news(country,interest)
+  try:
+    interest = user_profile.interests
+    country = user_profile.country
+    data = news(country,interest)
+  except :
+    data = []
+  
   return render(request,'index.html',{'data':data})
 
 @login_required(login_url='login')
 def explore(request):
   user_model = User.objects.get(username=request.user.username)
   user_profile = Profile.objects.get(user=user_model)
-  interest = user_profile.interests
+  
+  try:
+    interest = user_profile.interests
 
-  data = worldNews(interest)
+    data = worldNews(interest)
+  except :
+    data = []
+  
   
   return render(request,'explore.html',{'data':data})
 
