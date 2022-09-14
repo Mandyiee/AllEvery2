@@ -1,0 +1,46 @@
+{% extends 'main.html' %} {% load static %} 
+
+{% block title %} About Page {% endblock title %}
+      {% block mainscreen %}
+
+      <li class=""><a class="" href="/">Home</a></li>
+
+
+      <li><a class="" href="/explore">Explore</a></li>
+
+      <li><a class="" href="/search">Search</a></li>
+       <li><a class="" href="/interests">Interests</a></li>
+        <li class="active"><a  href="/about">About</a></li>
+      <li><a class="" href="/logout">Logout</a></li>
+      {% endblock mainscreen %}
+
+            {% block mobilescreen %}
+
+    <li ><a class="" href="/">Home</a></li>
+
+      <li><a class="" href="/explore">Explore</a></li>
+
+      <li><a class="" href="/search">Search</a></li>
+       <li><a class="" href="/interests">Interests</a></li>
+        <li class="active"><a class="" href="/about">About</a></li>
+      <li><a class="" href="/logout">Logout</a></li>
+      {% endblock mobilescreen %}
+{% block content %} 
+
+
+
+<main class="about-main">
+ 
+<div class="about-con px-3 py-5 rounded">
+  <div class="about-img text-center py-4">
+    <img class="" src="https://see.fontimg.com/api/renderfont4/qZwlV/eyJyIjoiZnMiLCJoIjoxMjIsInciOjE4NzUsImZzIjo2NSwiZmdjIjoiI0U0REVERSIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/QWxsRXZlcnk/beautiful-harmony.png" alt="" />
+  </div>
+  <p>
+    AllEvery is a news platform built with the newsApi. It gives news based on location and personal interests 
+    
+  </p>
+</div>
+
+	  </main>
+
+{% endblock content %}

@@ -1,0 +1,67 @@
+{% extends 'main.html' %} {% load static %} 
+{% block title %} Search Page {% endblock title %}
+      {% block mainscreen %}
+                  <li class=""><a class="" href="/">Home</a></li>
+
+      <li><a class="" href="/explore">Explore</a></li>
+
+      <li class="active"><a  href="/search">Search</a></li>
+       <li><a class="" href="/interests">Interests</a></li>
+        <li><a class="" href="/about">About</a></li>
+      <li><a class="" href="/logout">Logout</a></li>
+      {% endblock mainscreen %}
+            
+
+                  {% block mobilescreen %}
+
+
+    <li ><a class="" href="/">Home</a></li>
+
+      <li><a class="" href="/explore">Explore</a></li>
+
+      <li class="active" ><a class="" href="/search">Search</a></li>
+       <li><a class="" href="/interests">Interests</a></li>
+        <li><a class="" href="/about">About</a></li>
+      <li><a class="" href="/logout">Logout</a></li>
+      {% endblock mobilescreen %}
+      
+{% block content %} 
+
+<main>
+     <h1 class="text-center sect-heading py-3">Search</h1>
+  <div class="search-inp ">
+    <form action="/search" method="POST" accept-charset="utf-8">
+      {% csrf_token %}
+          <input type="text" name="keyword" id="" value="" placeholder="Keyword" autofocus minlength="2" required/>
+<button type="submit" class="search-button"> <i class="fas fa-search"></i></button>
+ 
+    </form>
+
+  </div>
+
+	<div class=" container-fluid news-con pb-3 px-3">
+	  
+	  
+		  {% for datum in data %}
+
+	  <div class="news rounded " style="background: black;">
+
+	    <a href="{{datum.link}}">
+	    <div class="new-image-con">
+	      <img class="new-image" src="{{datum.imageurl}}" alt="" />
+	     </div>
+	     <div class="new-content" style="background: transparent;">
+	       <h5 class="text-center" style="background: transparent;color:var(--secondary-color);">{{datum.interest | title}}</h5>
+	       <h3 class="py-1" style="background: transparent;">{{datum.title | title}}</h3>
+	       <p class="" style="background: transparent;">{{datum.excerpt|truncatewords:21}}</p>
+	     </div>
+	     </a>
+	  </div>
+	  
+ 
+	   {% endfor %}
+
+	     </div>
+	  
+</main>
+{% endblock content %}
