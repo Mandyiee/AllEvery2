@@ -122,7 +122,7 @@ CSRF_COOKIE_SECURE = True
 
 SESSION_COOKIE_SECURE = True
 
-
+CSRF_TRUSTED_ORIGINS = ['https://allevery.up.railway.app/login']
 
 
 # Static files (CSS, JavaScript, Images)
