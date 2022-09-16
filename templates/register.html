@@ -30,19 +30,19 @@
     <form class="" action="/register" method="POST" accept-charset="utf-8">
       {% csrf_token %}
 <div class="form-floating my-4 my-lg-5 rounded">
-  <input type="text" class="form-control" id="Input" placeholder="Username" name="username">
+  <input type="text" class="form-control" id="Input" placeholder="Username" name="username" required>
   <label for="Input">Username</label>
 </div>
   
 <div class="form-floating my-4 my-lg-5 rounded">
-  <input type="password" class="form-control" id="Password" placeholder="Password" name="password">
+  <input type="password" class="form-control" id="Password" placeholder="Password" name="password" required>
   <label for="Password">Password</label>
 </div>
 <div class="form-floating my-4 my-lg-5 rounded">
 
 
 
-  <input type="password" class="form-control" id="Password2" placeholder="Password" name="password2">
+  <input type="password" class="form-control" id="Password2" placeholder="Password" name="password2" required>
 
   <label for="Password2">Password2</label>
 </div>
