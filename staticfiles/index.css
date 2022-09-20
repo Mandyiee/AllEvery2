@@ -627,9 +627,9 @@ grid-auto-flow: column dense;
     -webkit-column-count: 4;
     column-count: 4;
     column-gap: 20px;
-page-break-inside: avoid
-    break-inside: avoid-column
-    display:table;   
+page-break-inside: avoid;
+    break-inside: avoid-column;
+    
   }
   .news {
     margin-bottom: 20px;
